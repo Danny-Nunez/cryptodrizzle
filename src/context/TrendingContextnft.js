@@ -10,7 +10,7 @@ export const TrendingProvidernft = ({ children }) => {
   const getTrendData = async () => {
     try {
       const data = await fetch(
-        `https://api.coingecko.com/api/v3/search/trending`
+        `https://corsproxy.io/?https://api.coingecko.com/api/v3/search/trending`
       )
         .then((res) => res.json())
         .then((json) => json);

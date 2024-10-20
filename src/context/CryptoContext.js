@@ -35,7 +35,7 @@ export const CryptoProvider = ({ children }) => {
 
     try {
       const data = await fetch(
-        `https://api.coingecko.com/api/v3/coins/markets?vs_currency=${currency}&ids=${coinSearch}&order=${sortBy}&per_page=${perPage}&page=${page}&sparkline=false&price_change_percentage=1h%2C24h%2C7d`
+        `https://corsproxy.io/?https://api.coingecko.com/api/v3/coins/markets?vs_currency=${currency}&ids=${coinSearch}&order=${sortBy}&per_page=${perPage}&page=${page}&sparkline=false&price_change_percentage=1h%2C24h%2C7d`
       ).then(async (res) => {
         if (res.ok) {
           return res.json();
@@ -58,7 +58,7 @@ export const CryptoProvider = ({ children }) => {
     setCoinData();
     try {
       const data = await fetch(
-        `https://api.coingecko.com/api/v3/coins/${coinid}?localization=false&tickers=false&market_data=true&community_data=false&developer_data=true&sparkline=false`
+        `https://corsproxy.io/?https://api.coingecko.com/api/v3/coins/${coinid}?localization=false&tickers=false&market_data=true&community_data=false&developer_data=true&sparkline=false`
       )
         .then((res) => res.json())
         .then((json) => json);
@@ -73,7 +73,7 @@ export const CryptoProvider = ({ children }) => {
   const getSearchResult = async (query) => {
     try {
       const data = await fetch(
-        `https://api.coingecko.com/api/v3/search?query=${query}`
+        `https://corsproxy.io/?https://api.coingecko.com/api/v3/search?query=${query}`
       )
         .then((res) => res.json())
         .then((json) => json);
